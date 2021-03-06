@@ -1,0 +1,21 @@
+{% extends 'poll/index.html' %}
+{% block content %}
+ 
+<div class="container-fluid">
+  <h4>Enjoy your polls</h4>       
+</div>
+{% for key,value in register.items %}
+  <div class="container p-3 my-3 border">
+    <h5>{{key}}</h5>
+      {% for element in value %}
+       <div class="row">
+        <div class="col-5">{{element.choice}}</div>
+        <div class="col-1">
+            <span class="badge bg-primary">{{element.votes}} votes</span></div> 
+        </div>
+      {% endfor %}
+  </div>
+{% endfor %}
+
+
+{% endblock %}
